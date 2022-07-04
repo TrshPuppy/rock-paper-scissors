@@ -1,4 +1,4 @@
-<!-- commit: Put score comparison into function called 'round'.   -->
+<!-- commit:Edit Restructure code. Change variable names. Add pseudocode.html for reference.  -->
 
 <!DOCTYPE html>
 <html lang = 'en'>
@@ -9,107 +9,74 @@
 
     <body>
         <script>
-        //initialize variables for rock, paper, scissors:
-        let rock = 2;
-        let paper = 0;
-        let scissors = 1;
-
-        //prompt user for choice in rock, paper, or scissors. store choice in "userPlay"
-        let userPlay = String(prompt("Rock, paper, or scissors?"));
-        
-        let userScore = 0;
-        if(userPlay == "rock" || userPlay == "ROCK" || userPlay == "r" || userPlay == "R" || userPlay == "Rock")
-        {
-            userScore += 2;
-            console.log("You chose: rock");
-        }
-        else if(userPlay == "paper" || userPlay == "PAPER" || userPlay == "p" || userPlay == "P" || userPlay == "Paper")
-        {
-            userScore += 0;
-            console.log("You chose: paper");
-        }
-        else if (userPlay == "scissors" || userPlay == "SCISSORS" || userPlay == "s" || userPlay == "S" || userPlay == "Scissors")
-        {
-            userScore += 1;
-            console.log("You chose: scissors");
-        }
-        
-        //generate random choice of rock/paper/scissors for computer. store in "computerPlay"
-        function randomSelection()
-        {
-            function getRandomNum(max)
+            // create game_round function which collects player and computer scores and compares them, then returns a string
+            function game_round(playerScore, computerScore)
             {
-                return Math.floor(Math.random() * max);
-            }
-            let num = getRandomNum(4);
-
-            let selection = 0;
-            if(num == "1") // rock
-            {
-                selection += 2;
-                console.log("The computer chose: rock");
-            }
-            else if(num == "2") // scissors
-            {
-                selection += 1;
-                console.log("The computer chose: scissors");
-            }
-            else
-            {
-                selection += 0;// paper
-                console.log("The computer chose: paper");
-            }
-            return selection;
-        }
-
-        const computerScore = randomSelection();
-        
-        // Function to play game using player selections.
-        function round(compScore, uScore)
-        {
-            let result;
-
-            if(uScore == compScore)
-            {
-                result = "You tied!";
-            }
-            else if(uScore == 0 && compScore == 2) // if user chooses paper && computer chooses rock
-            {
-                result = "You win! Paper beats rock!";
-            }
-            else if(compScore == 0 && uScore == 2) // if computer chooses paper && user chooses rock
-            {
-                result = "You lose! Paper beats rock!";
-            }
-            else if(uScore > compScore)
-            {  
-                if(uScore == 2 && compScore == 1)
+                let roundOutcome = 
                 {
-                    result = "You win! Rock beats scissors!"
+                    tie: false,
+                    playScore: 0,
+                    compScore: 0,
+                    message: "none"
                 }
-                else if(uScore == 1 && compScore == 0)
-                {
-                    result = "You win! Scissors beat paper!";
-                }
-            }
-            else
-            {
-                if(compScore == 2 && uScore == 1)
-                {
-                    result = "You lose! Rock beats scissors!";
-                }
-                else if (compScore == 1 && uScore == 0)
-                {
-                    result = "You lose! Scissors beat paper!";
-                }
-            }
-        return result;
-        }
-        console.log(round(computerScore, userScore));
-        // if user wins, print "you win!"
-        // if computer wins, print "you lose!"
-        // if draw, print "you tie!"
 
+                // compare user score w/ computer score for round.
+                if(playerScore == computerScore)
+                {
+                    roundOutcome.message = "You tied!";
+                    roundOutcome.tie = true;
+                }
+                else if(playerScore == 0 && computerScore == 2) // if user chooses paper && computer chooses rock
+                {
+                    roundOutcome.message = "You win! Paper beats rock!";
+                    roundOutcome.playScore += 1;
+                }
+                else if(computerScore == 0 && playerScore == 2) // if computer chooses paper && user chooses rock
+                {
+                    roundOutcome.message = "You lose! Paper beats rock!";
+                    roundOutcome.compScore += 1;
+                }
+                else if(playerScore > computerScore)
+                {  
+                    if(playerScore == 2 && computerScore == 1)
+                    {
+                        roundOutcome.message = "You win! Rock beats scissors!";
+                        roundOutcome.playScore += 1;
+                    }
+                    else if(playerScore == 1 && computerScore == 0)
+                    {
+                        roundOutcome.message = "You win! Scissors beat paper!";
+                        roundOutcome.playScore += 1;
+                    }
+                }
+                else
+                {
+                    if(computerScore == 2 && userScore == 1)
+                    {
+                        roundOutcome.message = "You lose! Rock beats scissors!";
+                        roundOutcome.compScore += 1;
+                    }
+                    else if (computerScore == 1 && userScore == 0)
+                    {
+                        roundOutcome.message = "You lose! Scissors beat paper!";
+                        roundOutcome.compScore += 1;
+                    }
+                }
+                return outcome;
+            }
+            // create game function which calls a round function 5 times
+            function game()
+            {
+                let round_string;
+                let total_rounds = 0;
+                for(let i = 0; i < 5; i++)
+                {
+                    round_string = (game_round(playerSelection, computerSelection));
+                    total_rounds += 1;
+                }
+                return winner;
+
+            }
         </script>
     </body>
 </html>
