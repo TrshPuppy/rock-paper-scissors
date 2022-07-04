@@ -1,4 +1,4 @@
-<!-- commit:Edit Restructure code. Change variable names. Add pseudocode.html for reference.  -->
+<!-- commit: Update comments. Update gameRound name & return values.  -->
 
 <!DOCTYPE html>
 <html lang = 'en'>
@@ -9,8 +9,8 @@
 
     <body>
         <script>
-            // create game_round function which collects player and computer scores and compares them, then returns a string
-            function game_round(playerScore, computerScore)
+            // create game_round function which collects player and computer scores and compares them, then returns an object:
+            function gameRound(playerScore, computerScore)
             {
                 let roundOutcome = 
                 {
@@ -20,7 +20,7 @@
                     message: "none"
                 }
 
-                // compare user score w/ computer score for round.
+                // compare player score w/ computer score for round.
                 if(playerScore == computerScore)
                 {
                     roundOutcome.message = "You tied!";
@@ -64,15 +64,27 @@
                 }
                 return outcome;
             }
-            // create game function which calls a round function 5 times
+            // create game function which calls round function 5 times:
             function game()
             {
-                let round_string;
+                let playerWins = 0;
+                let computerWins = 0;
                 let total_rounds = 0;
+                let outcome = 
+                {
+                    tie: false,
+                    pScore: 0,
+                    cScore: 0,
+                    message: "none"
+                }
+
                 for(let i = 0; i < 5; i++)
                 {
-                    round_string = (game_round(playerSelection, computerSelection));
+                    outcome = gameRound(playerSelection, computerSelection);
                     total_rounds += 1;
+                    console.log(outcome.message);
+                    playerWins += outcome.pScore;
+                    computerWins += outcome.cScore;
                 }
                 return winner;
 
