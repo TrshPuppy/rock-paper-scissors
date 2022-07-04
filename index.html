@@ -8,25 +8,25 @@
     <body>
         <script>
         //initialize variables for rock, paper, scissors.
-        let rock;
-        let paper;
-        let scissors;
-
+            
         //prompt user for choice in rock, paper, or scissors. store choice in "userPlay"
-        let userPlay = prompt("Rock, paper, or scissors?");
+        let userPlay = String(prompt("Rock, paper, or scissors?"));
+        
+        let userSelection;
 
-        if(userPlay = "rock" || "ROCK" || "r" || "R" || "Rock")
+        if(userPlay == "rock" || userPlay == "ROCK" || userPlay == "r" || userPlay == "R" || userPlay == "Rock")
         {
-            userPlay = "rock";
+            userSelection = "rock";
         }
-        else if(userPlay = "paper" || "PAPER" || "p" || "P" || "Paper")
+        else if(userPlay == "paper" || userPlay == "PAPER" || userPlay == "p" || userPlay == "P" || userPlay == "Paper")
         {
-            userPlay = "paper";
+            userSelection = "paper";
         }
-        else if(userPlay = "scissors" || "SCISSORS" || "s" || "S" || "Scissors")
+        else if (userPlay == "scissors" || userPlay == "SCISSORS" || userPlay == "s" || userPlay == "S" || userPlay == "Scissors")
         {
-            userPlay = "scissors";
+            userSelection = "scissors";
         }
+        console.log("You chose: ", userSelection);
 
         //generate random choice of rock/paper/scissors for computer. store in "computerPlay"
         function randomSelection()
@@ -35,7 +35,6 @@
             {
                 return Math.floor(Math.random() * max);
             }
-           
             let num = getRandomNum(4);
 
             let selection;
@@ -56,9 +55,10 @@
         }
 
         const computerPlay = randomSelection();
-        // create variable for computer, store in "computerPlay"
+        console.log(computerPlay);
         
         //compare userPlay vs computerPlay
+        
         // if user wins, print "you win!"
         // if computer wins, print "you lose!"
         // if draw, print "you tie!"
@@ -67,3 +67,6 @@
         </script>
     </body>
 </html>
+
+<!-- commit:
+    Create comparison loop for player vs computer selection-->
