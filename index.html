@@ -1,3 +1,5 @@
+<!-- commit: Fix userSelection and computerSelection to reflect scores  -->
+
 <!DOCTYPE html>
 <html lang = 'en'>
     <head>
@@ -7,27 +9,31 @@
 
     <body>
         <script>
-        //initialize variables for rock, paper, scissors.
-            
+        //initialize variables for rock, paper, scissors:
+        let rock = 2;
+        let paper = 0;
+        let scissors = 1;
+
         //prompt user for choice in rock, paper, or scissors. store choice in "userPlay"
         let userPlay = String(prompt("Rock, paper, or scissors?"));
         
-        let userSelection;
-
+        let userScore = 0;
         if(userPlay == "rock" || userPlay == "ROCK" || userPlay == "r" || userPlay == "R" || userPlay == "Rock")
         {
-            userSelection = "rock";
+            userScore += 2;
+            console.log("You chose: rock");
         }
         else if(userPlay == "paper" || userPlay == "PAPER" || userPlay == "p" || userPlay == "P" || userPlay == "Paper")
         {
-            userSelection = "paper";
+            userScore += 0;
+            console.log("You chose: paper");
         }
         else if (userPlay == "scissors" || userPlay == "SCISSORS" || userPlay == "s" || userPlay == "S" || userPlay == "Scissors")
         {
-            userSelection = "scissors";
+            userScore += 1;
+            console.log("You chose: scissors");
         }
-        console.log("You chose: ", userSelection);
-
+        
         //generate random choice of rock/paper/scissors for computer. store in "computerPlay"
         function randomSelection()
         {
@@ -37,25 +43,27 @@
             }
             let num = getRandomNum(4);
 
-            let selection;
-            if(num == "1")
+            let selection = 0;
+            if(num == "1") // rock
             {
-                selection = "rock";
+                selection += 2;
+                console.log("The computer chose: rock");
+
             }
-            else if(num == "2")
+            else if(num == "2") // scissors
             {
-                selection = "scissors";
+                selection += 1;
+                console.log("The computer chose: scissors");
             }
             else
             {
-                selection = "paper";
+                selection += 0;// paper
+                console.log("The computer chose: paper");
             }
-            console.log(num);
             return selection;
         }
 
-        const computerPlay = randomSelection();
-        console.log(computerPlay);
+        const computerScore = randomSelection();
         
         //compare userPlay vs computerPlay
         
@@ -63,10 +71,7 @@
         // if computer wins, print "you lose!"
         // if draw, print "you tie!"
 
-
         </script>
     </body>
 </html>
 
-<!-- commit:
-    Create comparison loop for player vs computer selection-->
