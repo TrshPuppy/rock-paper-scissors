@@ -1,4 +1,4 @@
-<!-- commit: Fix userSelection and computerSelection to reflect scores  -->
+<!-- commit: Create if statements for score comparison.  -->
 
 <!DOCTYPE html>
 <html lang = 'en'>
@@ -66,6 +66,26 @@
         const computerScore = randomSelection();
         
         //compare userPlay vs computerPlay
+        if(userScore == computerScore)
+        {
+            console.log("You tied!");
+        }
+        else if(userScore == 0 && computerScore == 2) // if user chooses paper && computer chooses rock
+        {
+            console.log("You win!");
+        }
+        else if(computerScore == 0 && userScore == 2) // if computer chooses paper && user chooses rock
+        {
+            console.log("You lose!");
+        }
+        else if(userScore > computerScore)
+        {
+            console.log("You win!");
+        }
+        else
+        {
+            console.log("You lose!");
+        }
         
         // if user wins, print "you win!"
         // if computer wins, print "you lose!"
