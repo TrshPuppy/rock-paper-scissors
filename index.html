@@ -1,4 +1,4 @@
-<!-- commit: Create for loop to loop through 5 game rounds, updating outcome object.     -->
+<!-- commit: Add score tally and report winner/loser at end of game.     -->
 
 <!DOCTYPE html>
 <html lang = 'en'>
@@ -114,7 +114,7 @@
                 }
                 return roundOutcome;
             }
-            // create game function which calls round function 5 times:
+            // create for loop to loop through 5 game rounds, updating outcome object w/ results:
             let pScore = 0;
             let cScore = 0;
 
@@ -133,10 +133,22 @@
                 }
             }
             
-            console.log("comp score: ", cScore);
-            console.log("player score: ", pScore);
-            
-            
+            // tally scores and choose winner:
+                if(cScore == pScore)
+                {
+                    console.log("You tied all 5 games! Computer won ", cScore +  " times. You won ", pScore + " times!");
+                }
+                else
+                {
+                    if(cScore > pScore)
+                    {
+                        console.log("You lost the game! Your wins: ", pScore + " The computer's wins: ", cScore);
+                    }
+                    else if(pScore > cScore)
+                    {
+                        console.log("You won the game with a total of ", pScore + " wins!");
+                    }
+                }
         </script>
     </body>
 </html>
