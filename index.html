@@ -1,4 +1,4 @@
-<!-- commit: Create if statements for score comparison.  -->
+<!-- commit: Put score comparison into function called 'round'.   -->
 
 <!DOCTYPE html>
 <html lang = 'en'>
@@ -48,7 +48,6 @@
             {
                 selection += 2;
                 console.log("The computer chose: rock");
-
             }
             else if(num == "2") // scissors
             {
@@ -65,28 +64,48 @@
 
         const computerScore = randomSelection();
         
-        //compare userPlay vs computerPlay
-        if(userScore == computerScore)
+        // Function to play game using player selections.
+        function round(compScore, uScore)
         {
-            console.log("You tied!");
+            let result;
+
+            if(uScore == compScore)
+            {
+                result = "You tied!";
+            }
+            else if(uScore == 0 && compScore == 2) // if user chooses paper && computer chooses rock
+            {
+                result = "You win! Paper beats rock!";
+            }
+            else if(compScore == 0 && uScore == 2) // if computer chooses paper && user chooses rock
+            {
+                result = "You lose! Paper beats rock!";
+            }
+            else if(uScore > compScore)
+            {  
+                if(uScore == 2 && compScore == 1)
+                {
+                    result = "You win! Rock beats scissors!"
+                }
+                else if(uScore == 1 && compScore == 0)
+                {
+                    result = "You win! Scissors beat paper!";
+                }
+            }
+            else
+            {
+                if(compScore == 2 && uScore == 1)
+                {
+                    result = "You lose! Rock beats scissors!";
+                }
+                else if (compScore == 1 && uScore == 0)
+                {
+                    result = "You lose! Scissors beat paper!";
+                }
+            }
+        return result;
         }
-        else if(userScore == 0 && computerScore == 2) // if user chooses paper && computer chooses rock
-        {
-            console.log("You win!");
-        }
-        else if(computerScore == 0 && userScore == 2) // if computer chooses paper && user chooses rock
-        {
-            console.log("You lose!");
-        }
-        else if(userScore > computerScore)
-        {
-            console.log("You win!");
-        }
-        else
-        {
-            console.log("You lose!");
-        }
-        
+        console.log(round(computerScore, userScore));
         // if user wins, print "you win!"
         // if computer wins, print "you lose!"
         // if draw, print "you tie!"
