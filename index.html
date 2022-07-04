@@ -1,4 +1,4 @@
-<!-- commit: Update comments. Update gameRound name & return values.  -->
+<!-- commit: Update gameRound function to include player's choice.   -->
 
 <!DOCTYPE html>
 <html lang = 'en'>
@@ -10,8 +10,28 @@
     <body>
         <script>
             // create game_round function which collects player and computer scores and compares them, then returns an object:
-            function gameRound(playerScore, computerScore)
+            function gameRound()
             {
+                //prompt user for choice in rock, paper, or scissors. store choice in "userPlay"
+                let userPlay = String(prompt("Rock, paper, or scissors?"));
+        
+                let  playerScore = 0;
+                if(userPlay == "rock" || userPlay == "ROCK" || userPlay == "r" || userPlay == "R" || userPlay == "Rock")
+                {
+                    playerScore += 2; // rock = score of 2
+                    console.log("You chose: rock");
+                }
+                else if(userPlay == "paper" || userPlay == "PAPER" || userPlay == "p" || userPlay == "P" || userPlay == "Paper")
+                {
+                    playerScore += 0; // paper = score of 0
+                    console.log("You chose: paper");
+                }
+                else if (userPlay == "scissors" || userPlay == "SCISSORS" || userPlay == "s" || userPlay == "S" || userPlay == "Scissors")
+                {
+                    playerScore += 1; // scissors = score of 1
+                    console.log("You chose: scissors");
+                }
+
                 let roundOutcome = 
                 {
                     tie: false,
