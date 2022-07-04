@@ -1,6 +1,6 @@
 <!-- Rock, paper, scissors game made by Rose Pineau. Initial commit 7/3/2022. See README.md for further info.-->
 
-<!-- commit: Add author header comment. Update other comments.     -->
+<!-- commit: Make function/variable names more descriptive. Update comments.     -->
 <!DOCTYPE html>
 <html lang = 'en'>
     <head>
@@ -10,8 +10,8 @@
 
     <body>
         <script>
-            // This  gameRound function collects player and computer scores and compares them, then returns an object:
-            function gameRound()
+            // This  playRound function collects player and computer scores and compares them, then returns an object:
+            function playRound()
             {
                 // Prompts user for choice in rock, paper, or scissors. Stores choice in 'userPlay' & assigns score via 'playerScore'.
                 let playerScore = -1;
@@ -45,7 +45,7 @@
                 }
                 while (playerScore = -1);
 
-                // This function generates random choice of rock/paper/scissors for computer and returns a score:
+                // This function generates random choice of rock/paper/scissors for computer and returns a compScore based on its choice:
                 function computerPlay()
                 {
                     function getRandomNum(max)
@@ -54,7 +54,7 @@
                     }
                     let num = getRandomNum(4);
 
-                    let score = 0;
+                    let compScore = 0;
                     if(num == "1") // Rock
                     {
                         score += 2;
@@ -62,15 +62,15 @@
                     }
                     else if(num == "2") // Scissors
                     {
-                        score += 1;
+                        compScore += 1;
                         console.log("The computer chose: scissors");
                     }
                     else
                     {
-                        score += 0; // Paper
+                        compScore += 0; // Paper
                         console.log("The computer chose: paper");
                     }
-                return score;
+                return compScore;
                 }
                 const computerScore = computerPlay();
 
@@ -133,16 +133,16 @@
 
             for(let i = 0; i < 5; i++)
             {
-                var outcome = gameRound(); // Creates outcome object to store data from gameRound().
+                var outcomeOfRound = playRound(); // Creates outcomeOfRound object to store data returned from playRound().
                 if(outcome.tie == false)
                 {
-                    pScore += outcome.playScore;
-                    cScore += outcome.compScore;
-                    console.log(outcome.message);
+                    pScore += outcomeOfRound.playScore;
+                    cScore += outcomeOfRound.compScore;
+                    console.log(outcomeOfRound.message);
                 }
                 else
                 {
-                    console.log(outcome.message);
+                    console.log(outcomeOfRound.message);
                 }
             }
             
