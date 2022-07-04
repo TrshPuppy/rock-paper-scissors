@@ -7,30 +7,43 @@
 
     <body>
         <script>
-        //create variables for rock, paper, scissors, store respectively
-        let rock = "rock" || "ROCK" || "r" || "R" || "Rock";
-        let paper  = "paper" || "PAPER" || "p" || "P" || "Paper";
-        let scissors = "scissors" || "SCISSORS" || "s" || "S" || "Scissors";
-
-        // create variable for computer, store in "computerPlay"
-        const computerPlay;
-
-        // create variable for user, store in "userPlay"
-        const userPlay;
+        //initialize variables for rock, paper, scissors.
+        let rock;
+        let paper;
+        let scissors;
 
         //prompt user for choice in rock, paper, or scissors. store choice in "userPlay"
-        userPlay = prompt("Rock, paper, or scissors?");
+        let userPlay = prompt("Rock, paper, or scissors?");
+
+        if(userPlay = "rock" || "ROCK" || "r" || "R" || "Rock")
+        {
+            userPlay = "rock";
+        }
+        else if(userPlay = "paper" || "PAPER" || "p" || "P" || "Paper")
+        {
+            userPlay = "paper";
+        }
+        else if(userPlay = "scissors" || "SCISSORS" || "s" || "S" || "Scissors")
+        {
+            userPlay = "scissors";
+        }
 
         //generate random choice of rock/paper/scissors for computer. store in "computerPlay"
-        function randomSelection();
+        function randomSelection()
         {
+            function getRandomNum(max)
+            {
+                return Math.floor(Math.random() * max);
+            }
+           
+            let num = getRandomNum(4);
+
             let selection;
-            num = math.random();
-            if(num <= .3)
+            if(num == "1")
             {
                 selection = "rock";
             }
-            else if(num > .3 && <= .6)
+            else if(num == "2")
             {
                 selection = "scissors";
             }
@@ -38,10 +51,13 @@
             {
                 selection = "paper";
             }
-
+            console.log(num);
             return selection;
         }
-        computerPlay = 
+
+        const computerPlay = randomSelection();
+        // create variable for computer, store in "computerPlay"
+        
         //compare userPlay vs computerPlay
         // if user wins, print "you win!"
         // if computer wins, print "you lose!"
