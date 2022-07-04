@@ -1,4 +1,4 @@
-<!-- commit: Add score tally and report winner/loser at end of game.     -->
+<!-- commit: Fix comments. Create do while loop for userPlay prompt.     -->
 
 <!DOCTYPE html>
 <html lang = 'en'>
@@ -9,28 +9,40 @@
 
     <body>
         <script>
-            // create game_round function which collects player and computer scores and compares them, then returns an object:
+            // create gameRound function which collects player and computer scores and compares them, then returns an object:
             function gameRound()
             {
                 //prompt user for choice in rock, paper, or scissors. store choice in "userPlay"
-                let userPlay = String(prompt("Rock, paper, or scissors?"));
-        
-                let  playerScore = 0;
-                if(userPlay == "rock" || userPlay == "ROCK" || userPlay == "r" || userPlay == "R" || userPlay == "Rock")
+                let playerScore = -1;
+                do
                 {
-                    playerScore += 2; // rock = score of 2
-                    console.log("You chose: rock");
+                    let userPlay = String(prompt("Rock, paper, or scissors?"));
+
+                    if(userPlay == "rock" || userPlay == "ROCK" || userPlay == "r" || userPlay == "R" || userPlay == "Rock")
+                    {
+                        playerScore += 3; // rock = score of 2
+                        console.log("You chose: rock");
+                        break;
+                    }
+                    else if(userPlay == "paper" || userPlay == "PAPER" || userPlay == "p" || userPlay == "P" || userPlay == "Paper")
+                    {
+                        playerScore += 1; // paper = score of 0
+                        console.log("You chose: paper");
+                        break;
+                    }
+                    else if (userPlay == "scissors" || userPlay == "SCISSORS" || userPlay == "s" || userPlay == "S" || userPlay == "Scissors")
+                    {
+                        playerScore += 2; // scissors = score of 1
+                        console.log("You chose: scissors");
+                        break;
+                    }
+                    else
+                    {
+                        console.log("Please choose a valid option!");
+                        playerScore += 0;
+                    }
                 }
-                else if(userPlay == "paper" || userPlay == "PAPER" || userPlay == "p" || userPlay == "P" || userPlay == "Paper")
-                {
-                    playerScore += 0; // paper = score of 0
-                    console.log("You chose: paper");
-                }
-                else if (userPlay == "scissors" || userPlay == "SCISSORS" || userPlay == "s" || userPlay == "S" || userPlay == "Scissors")
-                {
-                    playerScore += 1; // scissors = score of 1
-                    console.log("You chose: scissors");
-                }
+                while (playerScore = -1);
 
                 // generate random choice of rock/paper/scissors for computer. store in "computerScore"
                 function computerPlay()
@@ -136,7 +148,7 @@
             // tally scores and choose winner:
                 if(cScore == pScore)
                 {
-                    console.log("You tied all 5 games! Computer won ", cScore +  " times. You won ", pScore + " times!");
+                    console.log("You tied! Computer won ", cScore +  " times. You won ", pScore + " times!");
                 }
                 else
                 {
