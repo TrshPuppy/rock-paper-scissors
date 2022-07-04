@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+    <head>
+        <meta charset = "UTF-8">
+        <title> Rock Paper Scissors</title>
+    </head>
+
+    <body>
+        <script>
+        //create variables for rock, paper, scissors, store respectively
+        let rock = "rock" || "ROCK" || "r" || "R" || "Rock";
+        let paper  = "paper" || "PAPER" || "p" || "P" || "Paper";
+        let scissors = "scissors" || "SCISSORS" || "s" || "S" || "Scissors";
+
+        // create variable for computer, store in "computerPlay"
+        const computerPlay;
+
+        // create variable for user, store in "userPlay"
+        const userPlay;
+
+        //prompt user for choice in rock, paper, or scissors. store choice in "userPlay"
+        userPlay = prompt("Rock, paper, or scissors?");
+
+        //generate random choice of rock/paper/scissors for computer. store in "computerPlay"
+        function randomSelection();
+        {
+            let selection;
+            num = math.random();
+            if(num <= .3)
+            {
+                selection = "rock";
+            }
+            else if(num > .3 && <= .6)
+            {
+                selection = "scissors";
+            }
+            else
+            {
+                selection = "paper";
+            }
+
+            return selection;
+        }
+        computerPlay = 
+        //compare userPlay vs computerPlay
+        // if user wins, print "you win!"
+        // if computer wins, print "you lose!"
+        // if draw, print "you tie!"
+
+
+        </script>
+    </body>
+</html>
