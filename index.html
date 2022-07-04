@@ -1,4 +1,4 @@
-<!-- commit: Update gameRound function to include player's choice.   -->
+<!-- commit: Update gameRound function to include computerPlay function.    -->
 
 <!DOCTYPE html>
 <html lang = 'en'>
@@ -31,6 +31,36 @@
                     playerScore += 1; // scissors = score of 1
                     console.log("You chose: scissors");
                 }
+
+                // generate random choice of rock/paper/scissors for computer. store in "computerScore"
+                function computerPlay()
+                {
+                    function getRandomNum(max)
+                    {
+                        return Math.floor(Math.random() * max);
+                    }
+                    let num = getRandomNum(4);
+
+                    let score = 0;
+                    if(num == "1") // rock
+                    {
+                        score += 2;
+                        console.log("The computer chose: rock");
+                    }
+                    else if(num == "2") // scissors
+                    {
+                        score += 1;
+                        console.log("The computer chose: scissors");
+                    }
+                    else
+                    {
+                        score += 0;// paper
+                        console.log("The computer chose: paper");
+                    }
+                return score;
+                }
+
+                const computerScore = computerPlay();
 
                 let roundOutcome = 
                 {
@@ -106,6 +136,7 @@
                     playerWins += outcome.pScore;
                     computerWins += outcome.cScore;
                 }
+                console.log(outcome);
                 return winner;
 
             }
