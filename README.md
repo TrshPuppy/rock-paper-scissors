@@ -6,3 +6,6 @@ The requirements for this project is to create a rock, paper, scissors game whic
 Per the Odin Project, the game will eventually also include a GUI to be designed later in the curriculum.
 
 ENJOY!
+
+
+Total time spent: 7 hours.
