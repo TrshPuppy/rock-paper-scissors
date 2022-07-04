@@ -1,4 +1,4 @@
-<!-- commit: delete game function.    -->
+<!-- commit: Create for loop to loop through 5 game rounds, updating outcome object.     -->
 
 <!DOCTYPE html>
 <html lang = 'en'>
@@ -115,8 +115,27 @@
                 return roundOutcome;
             }
             // create game function which calls round function 5 times:
-            var outcome = gameRound();
-            console.log(outcome);
+            let pScore = 0;
+            let cScore = 0;
+
+            for(let i = 0; i < 5; i++)
+            {
+                var outcome = gameRound();
+                if(outcome.tie == false)
+                {
+                    pScore += outcome.playScore;
+                    cScore += outcome.compScore;
+                    console.log(outcome.message);
+                }
+                else
+                {
+                    console.log(outcome.message);
+                }
+            }
+            
+            console.log("comp score: ", cScore);
+            console.log("player score: ", pScore);
+            
             
         </script>
     </body>
