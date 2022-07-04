@@ -1,4 +1,4 @@
-<!-- commit: Fix comments. Create do while loop for userPlay prompt.     -->
+<!-- commit: Update comments. Beautify.     -->
 
 <!DOCTYPE html>
 <html lang = 'en'>
@@ -12,7 +12,7 @@
             // create gameRound function which collects player and computer scores and compares them, then returns an object:
             function gameRound()
             {
-                //prompt user for choice in rock, paper, or scissors. store choice in "userPlay"
+                // prompt user for choice in rock, paper, or scissors. store choice in "userPlay"
                 let playerScore = -1;
                 do
                 {
@@ -44,7 +44,7 @@
                 }
                 while (playerScore = -1);
 
-                // generate random choice of rock/paper/scissors for computer. store in "computerScore"
+                // generate random choice of rock/paper/scissors for computer. store in "score"
                 function computerPlay()
                 {
                     function getRandomNum(max)
@@ -66,12 +66,11 @@
                     }
                     else
                     {
-                        score += 0;// paper
+                        score += 0; // paper
                         console.log("The computer chose: paper");
                     }
                 return score;
                 }
-
                 const computerScore = computerPlay();
 
                 let roundOutcome = 
@@ -124,15 +123,16 @@
                         roundOutcome.compScore += 1;
                     }
                 }
-                return roundOutcome;
+                return roundOutcome; // return object which includes tie boolean, scores, and message.
             }
+
             // create for loop to loop through 5 game rounds, updating outcome object w/ results:
             let pScore = 0;
             let cScore = 0;
 
             for(let i = 0; i < 5; i++)
             {
-                var outcome = gameRound();
+                var outcome = gameRound(); // create outcome object to store data from gameRound().
                 if(outcome.tie == false)
                 {
                     pScore += outcome.playScore;
@@ -164,4 +164,3 @@
         </script>
     </body>
 </html>
-
