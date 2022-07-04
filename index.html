@@ -1,6 +1,6 @@
 <!-- Rock, paper, scissors game made by Rose Pineau. Initial commit 7/3/2022. See README.md for further info.-->
 
-<!-- commit: Make function/variable names more descriptive. Update comments.     -->
+<!-- commit: Fix variable outcome to outcomeOfRound.     -->
 <!DOCTYPE html>
 <html lang = 'en'>
     <head>
@@ -134,7 +134,7 @@
             for(let i = 0; i < 5; i++)
             {
                 var outcomeOfRound = playRound(); // Creates outcomeOfRound object to store data returned from playRound().
-                if(outcome.tie == false)
+                if(outcomeOfRound.tie == false)
                 {
                     pScore += outcomeOfRound.playScore;
                     cScore += outcomeOfRound.compScore;
