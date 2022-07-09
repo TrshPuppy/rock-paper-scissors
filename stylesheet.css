@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Press+Start+2P&family=Trispace&display=swap');
+
 body
 {
     background-image: url(./img/backdrop.gif);
@@ -7,6 +9,7 @@ body
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    font-family: 'Press Start 2P', sans-serif;
 }
 
 header
@@ -14,8 +17,19 @@ header
     display: flex;
     flex-flow: column wrap;
     align-items: center;
+    align-content: space-around;
     justify-content: center;
-    margin: 20px;
+    margin-top: 50px;
+    text-align: center;
+    color: #ECFC04;
+    font-size: larger;
+    padding: 20px;
+}
+
+.instructions
+{
+    font-family: 'Inconsolata', sans-serif;
+    padding: 20px;
 }
 
 .button-box
@@ -28,7 +42,7 @@ header
     min-width: 50%;
     background-color: #B2FFFF30;
     border-radius: 8px;
-    margin: 20px;
+    padding: 20px;
 }
 .button
 {
@@ -36,4 +50,6 @@ header
     padding: 20px;
     border-radius: 8px;
     margin: 20px;
+    font-family: 'Trispace', sans-serif;
+    color: #301E51;
 }
