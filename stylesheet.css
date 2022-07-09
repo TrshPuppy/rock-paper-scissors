@@ -1,0 +1,39 @@
+body
+{
+    background-image: url(./img/backdrop.gif);
+    background-size: 60%;
+    background-attachment: fixed;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+header
+{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.button-box
+{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 1500px;
+    min-width: 50%;
+    background-color: #B2FFFF30;
+    border-radius: 8px;
+    margin: 20px;
+}
+.button
+{
+    background-color: #92B0AE;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px;
+}
