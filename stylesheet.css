@@ -35,17 +35,17 @@ header
 .button-box
 {
     display: flex;
-    flex-flow: row wrap;
+    flex-direction: row;
     align-items: center;
     justify-content: space-around;
     max-width: 1500px;
-    min-width: 50%;
+    min-width: 1500px;
     background-color: #B2FFFF30;
     border-radius: 8px;
     padding: 20px;
 }
 
-.btn
+button
 {
     background-color: #92B0AE;
     padding: 20px;
@@ -57,3 +57,19 @@ header
     border-width: 8px;
     border-style:double;
 }
+
+.rock-gif
+{
+    max-width: 20%;
+}
+
+.paper-gif
+{
+    max-width: 15%;
+}
+
+.scissors-gif
+{
+    max-width: 20%;
+}
+
