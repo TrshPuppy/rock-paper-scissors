@@ -44,7 +44,8 @@ header
     border-radius: 8px;
     padding: 20px;
 }
-.button
+
+.btn
 {
     background-color: #92B0AE;
     padding: 20px;
@@ -52,4 +53,7 @@ header
     margin: 20px;
     font-family: 'Trispace', sans-serif;
     color: #301E51;
+    border: #301E51;
+    border-width: 8px;
+    border-style:double;
 }

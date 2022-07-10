@@ -1,6 +1,6 @@
 <!-- Rock, paper, scissors game made by Rose Pineau. "rps-ui" branch from main. Initial branch commit 7/9/2022. See README.md for further info.-->
 
-<!-- commit: Add font import/fonts     -->
+<!-- commit: Style buttons. Add button event listener.     -->
 <!DOCTYPE html>
 <html lang = 'en'>
     <head>
@@ -17,15 +17,23 @@
             </div>
         </header>
         <div class = "button-box">
-            <div class = "button"> Rock </div>
-            <div class= "button"> Paper </div>
-            <div class= "button"> Scissors </div>
+            <div class = "btn"> Rock </div>
+            <div class= "btn"> Paper </div>
+            <div class= "btn"> Scissors </div>
         </div>
         
         <script>
             // This  playRound function collects player and computer scores and compares them, then returns an object:
             function playRound()
             {
+                const button = document.getElementsByClassName('btn');
+                button.addEventListener('click', clickAnimation);
+
+                function clickAnimation()
+                {
+                    alert ('hi!');
+                }
+
                 // Prompts user for choice in rock, paper, or scissors. Stores choice in 'userPlay' & assigns score via 'playerScore'.
                 let playerScore = -1;
                 do
