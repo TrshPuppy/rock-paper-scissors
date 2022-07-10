@@ -32,14 +32,14 @@ header
     padding: 20px;
 }
 
-.button-box
+.selection-box
 {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: space-around;
     max-width: 1500px;
-    min-width: 1500px;
+
     background-color: #B2FFFF30;
     border-radius: 8px;
     padding: 20px;
@@ -58,18 +58,30 @@ button
     border-style:double;
 }
 
+.gifbutton-box
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    align-content: flex-start;
+    max-width: 30%;
+}
+
 .rock-gif
 {
-    max-width: 20%;
+    max-width: 50%;
 }
 
 .paper-gif
 {
-    max-width: 15%;
+    max-width: 35%;
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
 
 .scissors-gif
 {
-    max-width: 20%;
+    max-width: 50%;
+    padding-top: 20px;
 }
 
