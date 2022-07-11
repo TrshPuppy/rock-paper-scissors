@@ -1,4 +1,4 @@
-// commit: Add startGame function.
+// commit: Add fadeIn to startGame function.
 
 const game = () => 
 {
@@ -14,6 +14,7 @@ const game = () =>
         playButton.addEventListener('click', () =>
         {
             introScreen.classList.add('fadeOut');
+            faceOffScreen.classList.add('fadeIn');
         });
     }
     startGame();
