@@ -22,36 +22,35 @@ header
     margin-top: 50px;
     text-align: center;
     color: #ECFC04;
-    font-size: larger;
+    font-size: 30px;
     padding: 20px;
 }
 
 .instructions
 {
-    font-family: 'Inconsolata', sans-serif;
-    padding: 20px;
+    font-family: 'Trispace', sans-serif;
+    padding: 30px;
 }
 
 .selection-box
 {
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-around;
     max-width: 1500px;
-
-    background-color: #B2FFFF30;
+    background-color: #B2FFFF50;
     border-radius: 8px;
     padding: 20px;
 }
 
 button
 {
-    background-color: #92B0AE;
+    background-color:#BCAFDC;
     padding: 20px;
     border-radius: 8px;
     margin: 20px;
-    font-family: 'Trispace', sans-serif;
+    font-family: 'Press Start 2P', sans-serif;
     color: #301E51;
     border: #301E51;
     border-width: 8px;
