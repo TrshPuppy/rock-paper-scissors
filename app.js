@@ -1,4 +1,4 @@
-// commit: Add playRound function, rockButton event listener which updates score.
+// commit: Restructure playRound func to include all player options.
 
 const game = () => 
 {
@@ -22,16 +22,15 @@ const game = () =>
 
     const playRound = () =>
     {
-        const rockButton = document.querySelector('.rock');
-        let playerChoice;
+        const options = document.querySelectorAll('.options button');
 
-        rockButton.addEventListener('click', () =>
-        {
-            playerChoice = "rock";
-            playerScore += 2;
-        });
-        
-
+        options.forEach(option =>
+            {
+                option.addEventListener('click', function()
+                {
+                    console.log(this);
+                })
+            });
     }
     playRound();
 };
