@@ -33,7 +33,8 @@ header
     align-items: center;
     justify-content: space-around;
     height: 50vh;
-    opacity: 5%;
+    background-color: #B2FFFF50;
+    border-radius: 8px;
 }
 
 .instructions
