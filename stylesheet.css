@@ -26,6 +26,14 @@ header
     padding: 20px;
 }
 
+.intro
+{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-around;
+    height: 50vh;
+}
 .instructions
 {
     font-family: 'Trispace', sans-serif;
@@ -34,12 +42,19 @@ header
     text-align: center;
 }
 
+.intro button
+{
+    padding: 10px;
+    max-width: fit-content;
+}
+
 .scoreboard
 {
     display: flex;
     justify-content: space-around;
     color: #B2FFFF;
 }
+
 .options
 {
     display: flex;
@@ -47,15 +62,14 @@ header
     align-items: center;
     justify-content: space-around;
     max-width: 1500px;
-    background-color: #B2FFFF50;
-    border-radius: 8px;
+    
     padding: 20px;
 }
 
 button
 {
     background-color:#BCAFDC;
-    border-radius: 8px;
+    border-radius: 5px;
     font-family: 'Press Start 2P', sans-serif;
     color: #301E51;
     max-width: 20%;
@@ -77,3 +91,36 @@ button
     max-width: 80%;
 }
 
+.faceoff
+{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 1500px;
+    background-color: #B2FFFF50;
+    border-radius: 8px;
+    padding: 20px;
+    font-family: 'Trispace', sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    color:#ECFC04;
+}
+
+.player-choices
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.p-choice-gif
+{
+    max-width: 20%;
+}
+
+.c-choice-gif
+{
+    max-width: 20%;
+}
