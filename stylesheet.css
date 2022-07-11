@@ -30,13 +30,15 @@ header
 {
     font-family: 'Trispace', sans-serif;
     padding: 30px;
+    color:#ECFC04;
+    text-align: center;
 }
 
-.selection-box
+.options
 {
     display: flex;
     flex-flow: row wrap;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-around;
     max-width: 1500px;
     background-color: #B2FFFF50;
@@ -47,40 +49,25 @@ header
 button
 {
     background-color:#BCAFDC;
-    padding: 20px;
     border-radius: 8px;
-    margin: 20px;
     font-family: 'Press Start 2P', sans-serif;
     color: #301E51;
-    border: #301E51;
-    border-width: 8px;
-    border-style:double;
-}
-
-.gifbutton-box
-{
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
-    align-content: flex-start;
-    max-width: 30%;
+    max-width: 20%;
+    cursor: pointer;
 }
 
 .rock-gif
 {
-    max-width: 50%;
+    max-width: 80%;
 }
 
 .paper-gif
 {
-    max-width: 35%;
-    padding-top: 50px;
-    padding-bottom: 20px;
+    max-width: 75%;
 }
 
 .scissors-gif
 {
-    max-width: 50%;
-    padding-top: 20px;
+    max-width: 80%;
 }
 

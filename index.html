@@ -1,6 +1,6 @@
 <!-- Rock, paper, scissors game made by Rose Pineau. "rps-ui" branch from main. Initial branch commit 7/9/2022. See README.md for further info.-->
 
-<!-- commit: Remove pseudocode.html. Add pseudocode.js for reference.     -->
+<!-- commit: Restructure index.html. Edit choice button style.     -->
 <!DOCTYPE html>
 <html lang = 'en'>
     <head>
@@ -10,26 +10,23 @@
     </head>
 
     <body>
-        <header> ROCK PAPER SCISSORS <br>
-            <div class = "instructions">
-                It's a lovely evening for some good 'ol R.P.S. <br>
-                Play your best against the computer!
+        <header> ROCK PAPER SCISSORS </header>
+        
+        <section class = "game">
+            <div class="intro">
+                <h2 class="instructions">
+                    It's a lovely evening for some good 'ol R.P.S. <br>
+                    Play your best against the computer!
+                </h2>
+                <button> Play </button>
             </div>
-        </header>
-        <div class = "selection-box">
-            <div class = "gifbutton-box">
-                <img class = "rock-gif" src = "/img/rock.gif">
-                <button id = "rock"> Rock </button>
+
+            <div class="options">
+                <button class="rock"> <img class = "rock-gif" src = "img/rock.gif"> </button>
+                <button class="paper"> <img class = "paper-gif" src = "img/paper.gif"> </button>
+                <button class="scissors"> <img class = "scissors-gif" src = "img/scissors.gif"> </button>
             </div>
-            <div class = "gifbutton-box">
-                <img class = "paper-gif" src = "/img/paper.gif">
-                <button> Paper </button>
-            </div>
-            <div class = "gifbutton-box">
-                <img class = "scissors-gif" src = "/img/scissors.gif">
-                <button onclick = "clickAnimation()"> Scissors </button>
-            </div>
-        </div>
+        </section>
         
         <script src = "app.js" charset = "UTF-8"></script>
     </body>
