@@ -48,6 +48,7 @@ header
 {
     padding: 10px;
     max-width: fit-content;
+    cursor: pointer;
 }
 
 .scoreboard
@@ -144,4 +145,16 @@ button
 .c-choice-gif
 {
     max-width: 20%;
+}
+
+div.fadeOut
+{
+    opacity: 0;
+    pointer-events: none;
+}
+
+div.fadeIn
+{
+    opacity: 1;
+    pointer-events: all;
 }
