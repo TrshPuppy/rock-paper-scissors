@@ -1,4 +1,4 @@
-// commit: Restructure playRound func to include all player options.
+// commit: Restructure playRound.
 
 const game = () => 
 {
@@ -22,17 +22,30 @@ const game = () =>
 
     const playRound = () =>
     {
-        const options = document.querySelectorAll('.options button');
+        const playerOptions = document.querySelectorAll('.options button');
+        const computerOptions = ['rock', 'paper', 'scissors'];
+        let computerChoice;
+        let playerChoice;
 
-        options.forEach(option =>
+        playerOptions.forEach(x);
+
+        function x(option)
+        {
+            option.addEventListener('click', () =>
             {
-                option.addEventListener('click', function()
-                {
-                    console.log(this);
-                })
+                // Generate computer choice:
+                const randomNum = Math.floor(Math.random() * 3);
+                computerChoice = computerOptions[randomNum];
             });
+            return computerChoice;
+        }
+       computerChoice = x(option);
+       console.log(computerChoice);
     }
     playRound();
+
+
+    
 };
 
 // Start game
