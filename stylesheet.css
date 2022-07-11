@@ -34,6 +34,12 @@ header
     text-align: center;
 }
 
+.scoreboard
+{
+    display: flex;
+    justify-content: space-around;
+    color: #B2FFFF;
+}
 .options
 {
     display: flex;
@@ -63,7 +69,7 @@ button
 
 .paper-gif
 {
-    max-width: 75%;
+    max-width: 80%;
 }
 
 .scissors-gif
