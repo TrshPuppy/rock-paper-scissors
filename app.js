@@ -1,4 +1,4 @@
-// commit: Add winnerScreen and style. Add fade in/out properties.
+// commit: Add play-again button. Style. add winnerText.
 
 // Global variables:
 let playerScore = 0;
@@ -8,6 +8,7 @@ let compScoreboard = document.querySelector('.computer-score p');
 let playerFaceoff = document.querySelector('.scoreboard .player-choice');
 let compFaceoff = document.querySelector('.scoreboard .computer-choice');
 let winnerScreen = document.querySelector('.winner-screen');
+let winnerText = document.querySelector('.winner-screen .text');
 const SELECTIONS = 
 [
     {
@@ -103,13 +104,13 @@ playerOptions.forEach(option =>
                 {
                     faceOffScreen.classList.remove('fadeIn');
                     winnerScreen.classList.add('fadeIn');
-                    winnerScreen.textContent = "You Win!"
+                    winnerText.textContent = "You Win!"
                 }
                 else
                 {
                     faceOffScreen.classList.remove('fadeIn');
                     winnerScreen.classList.add('fadeIn');
-                    winnerScreen.textContent = "You Lose!";
+                    winnerText.textContent = "You Lose!";
                 }
 
             }

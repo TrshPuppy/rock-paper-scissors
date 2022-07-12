@@ -94,6 +94,7 @@ button
     color: #301E51;
     max-width: 20%;
     cursor: pointer;
+    text-align: center;
 }
 
 #rock-gif
@@ -176,19 +177,18 @@ div.fadeIn
 .winner-screen
 {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column nowrap;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     max-width: 1500px;
+    min-width: fit-content;
     background-color: #B2FFFF80;
     border-radius: 8px;
-    padding: 20px;
-    font-family: 'Trispace', sans-serif;
+    font-family: 'Press Start 2P', sans-serif;
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 50px;
     position: center;
-   transform:  translateY(-75%);
+    transform:  translateY(-75%);
     height: 50vh;
     transition: opacity 0.5s ease 0.7s;
-
 }
