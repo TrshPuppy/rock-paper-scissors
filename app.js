@@ -1,4 +1,4 @@
-// commit: Edit stylesheet and COMPUTERCHOICES to display all choices.
+// commit: Update SELECTIONS.image. Style scoreboard w/ player choice gif.
 
 // Global variables to update per round:
 let playerScore = 0;
@@ -16,17 +16,17 @@ const SELECTIONS =
             [
                 {
                     name: 'rock',
-                    image: document.getElementsByClassName('rock-gif'),
+                    image: "<img class = 'scoreboard' src = 'img/rock.gif'>",
                     beats: 'scissors'
                 },
                 {
                     name: 'paper',
-                    image: document.getElementsByClassName('paper-gif'),
+                    image: "<img class = 'scoreboard' src = 'img/paper.gif'>",
                     beats: 'rock'
                 },
                 {
                     name: 'scissors',
-                    image: document.getElementsByClassName('scissors-gif'),
+                    image: "<img class = 'scoreboard' src = 'img/scissors.gif'>",
                     beats: 'paper'
                 }
             ]
@@ -73,9 +73,11 @@ playerOptions.forEach(option =>
 
             // Convert playerSelection to selection (SELECTIONS array):
             const selection = SELECTIONS.find(selection => selection.name === playerSelection);
-
             console.log("playerSelection is", playerSelection)
-            //console.log("selection is", selection);
+            console.log("selection is", selection);
+
+            // Update player scoreboard w/ slection gif:
+            playerFaceoff.innerHTML = selection.image;
 
             // Compare hands:
             if(selection.beats === computerSelection)

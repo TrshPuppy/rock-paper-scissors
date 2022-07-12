@@ -163,3 +163,12 @@ div.fadeIn
     max-width: 20%;
 }
 
+.player-choice
+{
+    min-width: 10%
+}
+
+.player-choice .scoreboard
+{
+    max-width: 20%;
+}
