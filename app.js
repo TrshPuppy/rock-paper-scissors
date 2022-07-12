@@ -1,4 +1,4 @@
-// commit: Remove console.logs. Beautify. Move SELECTIONS & COMPCHOICES to globals.
+// commit: Create chooseWinner function & check logic. More beautification.
 
 // Global variables:
 let playerScore = 0;
@@ -8,40 +8,39 @@ let compScoreboard = document.querySelector('.computer-score p');
 let playerFaceoff = document.querySelector('.scoreboard .player-choice');
 let compFaceoff = document.querySelector('.scoreboard .computer-choice');
 const SELECTIONS = 
-            [
-                {
-                    name: 'rock',
-                    image: "<img class = 'scoreboard' src = 'img/rock.gif'>",
-                    beats: 'scissors'
-                },
-                {
-                    name: 'paper',
-                    image: "<img class = 'scoreboard' src = 'img/paper.gif'>",
-                    beats: 'rock'
-                },
-                {
-                    name: 'scissors',
-                    image: "<img class = 'scoreboard' src = 'img/scissors.gif'>",
-                    beats: 'paper'
-                }
-            ]
+[
+    {
+        name: 'rock',
+        image: "<img class = 'scoreboard' src = 'img/rock.gif'>",
+         beats: 'scissors'
+    },
+    {
+        name: 'paper',
+        image: "<img class = 'scoreboard' src = 'img/paper.gif'>",
+        beats: 'rock'
+    },
+    {
+        name: 'scissors',
+        image: "<img class = 'scoreboard' src = 'img/scissors.gif'>",
+        beats: 'paper'
+    }
+]
 
 const COMPUTERCHOICES = 
-            [
-                {
-                    name: 'rock',
-                    image: "<img class = 'scoreboard' src = 'img/rock.gif'>"
-                },
-                {
-                    name: 'paper',
-                    image: "<img class = 'scoreboard' src = 'img/paper.gif'>"
-                },
-                {
-                    name: 'scissors',
-                    image: "<img class = 'scoreboard' src = 'img/scissors.gif'>"
-                }
-            ];
-
+[
+    {
+        name: 'rock',
+        image: "<img class = 'scoreboard' src = 'img/rock.gif'>"
+    },
+    {
+        name: 'paper',
+        image: "<img class = 'scoreboard' src = 'img/paper.gif'>"
+    },
+    {
+        name: 'scissors',
+        image: "<img class = 'scoreboard' src = 'img/scissors.gif'>"
+    }
+];
 
 // Fade in game from intro:
 const introScreen = document.querySelector('.intro');
@@ -93,6 +92,9 @@ playerOptions.forEach(option =>
                 computerScore += 1;
                 compScoreboard.textContent = computerScore;
             }
+
+            // Call chooseWinner function:
+            chooseWinner(playerScore, computerScore);
         });
     });
 
@@ -100,3 +102,20 @@ playerOptions.forEach(option =>
     {
         return;
     }
+
+   // Choose winner when xScore = 5:
+   function chooseWinner(pScore, cScore)
+   {
+    if(pScore === 5)
+    {
+        console.log("player wins");
+    }
+    else if(cScore === 5)
+    {
+        console.log("computer wins!");
+    }
+    else
+    {
+        return;
+    }
+   }
