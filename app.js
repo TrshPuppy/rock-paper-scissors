@@ -1,5 +1,37 @@
 // commit: Comment out old code. Start over. 
 
+
+// Fade in game from intro
+const introScreen = document.querySelector('.intro');
+const faceOffScreen = document.querySelector('.faceoff');
+const playButton = document.querySelector('.intro button');
+
+playButton.addEventListener('click', () =>
+{
+    introScreen.classList.add('fadeOut');
+    faceOffScreen.classList.add('fadeIn');
+});
+
+
+// Get player options from document
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // const game = () => 
 // {
 //     let playerScore = 0;
