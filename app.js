@@ -1,4 +1,8 @@
-// commit: Check logic in compare hands:
+// commit: Add score variables & add to compare hands. Check logic.
+
+// Global variables to update per round:
+let playerScore = 0;
+let computerScore = 0;
 
 // Fade in game from intro:
 const introScreen = document.querySelector('.intro');
@@ -31,7 +35,7 @@ playButton.addEventListener('click', () =>
 
 // Get player options from document:
 const playerOptions = document.querySelectorAll('[data-selection]');
-console.log(playerOptions);
+//console.log(playerOptions);
 
 // Start new when player clicks options:
 playerOptions.forEach(option => 
@@ -51,12 +55,13 @@ playerOptions.forEach(option =>
             // Convert playerSelection to selection (SELECTIONS array):
             const selection = SELECTIONS.find(selection => selection.name === playerSelection);
             console.log("playerSelection is", playerSelection)
-            console.log("selection is", selection);
+            //console.log("selection is", selection);
 
             // Compare hands:
+            
             if(selection.beats === computerSelection)
             {
-                console.log("player wins!");
+                playerScore += 1;
             }
             else if(selection.name === computerSelection)
             {
@@ -64,8 +69,10 @@ playerOptions.forEach(option =>
             }
             else
             {
-                console.log("comp wins!");
+                computerScore += 1;
             }
+            console.log(playerScore);
+            console.log(computerScore);
         });
     });
 
