@@ -1,4 +1,4 @@
-// commit: Add computer and player-choice to stylesheet. Update COMPUTERCHOICES.
+// commit: Add image subcategory to COMPUTERCHOICES to update scoreboard.
 
 // Global variables to update per round:
 let playerScore = 0;
@@ -55,20 +55,20 @@ playerOptions.forEach(option =>
             [
                 {
                     name: 'rock',
-                    image: document.getElementsByClassName('rock-gif')
+                    image: "<img src = 'img/rock.gif'>"
                 },
                 {
                     name: 'paper',
-                    image: document.getElementsByClassName('paper-gif')
+                    image: "<img src = 'img/paper.gif'>"
                 },
                 {
                     name: 'scissors',
-                    image: document.getElementsByClassName('scissors-gif')
+                    image: "<img src = 'img/scissors.gif'>"
                 }
             ];
             let randomNum = Math.floor(Math.random() *3);
-            let computerSelection = COMPUTERCHOICES[randomNum];
-            compFaceoff.image = 
+            let computerSelection = COMPUTERCHOICES[randomNum].name;
+            compFaceoff.innerHTML = COMPUTERCHOICES[randomNum].image;
             console.log(computerSelection);
 
             // Convert playerSelection to selection (SELECTIONS array):

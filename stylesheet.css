@@ -97,7 +97,7 @@ button
     cursor: pointer;
 }
 
-.rock-gif
+#rock-gif
 {
     max-width: 80%;
 }
@@ -161,4 +161,9 @@ div.fadeIn
 {
     opacity: 1;
     pointer-events: all;
+}
+
+.computer-choice
+{
+    max-width: 5%;
 }
