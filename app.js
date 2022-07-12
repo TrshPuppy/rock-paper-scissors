@@ -1,9 +1,27 @@
-// commit: Rename COMPUTERCHOICES. Create SELECTIONS array.
+// commit: Move SELECTIONS array out of forEach loop.
 
 // Fade in game from intro:
 const introScreen = document.querySelector('.intro');
 const faceOffScreen = document.querySelector('.faceoff');
 const playButton = document.querySelector('.intro button');
+const SELECTIONS = 
+            [
+                {
+                    name: 'rock',
+                    image: document.getElementsByClassName('rock-gif'),
+                    beats: 'scissors'
+                },
+                {
+                    name: 'paper',
+                    image: document.getElementsByClassName('paper-gif'),
+                    beats: 'rock'
+                },
+                {
+                    name: 'scissors',
+                    image: document.getElementsByClassName('scissors-gif'),
+                    beats: 'paper'
+                }
+            ]
 
 playButton.addEventListener('click', () =>
 {
@@ -31,26 +49,6 @@ playerOptions.forEach(option =>
             console.log(computerSelection);
 
             // Compare hands:
-            const SELECTIONS = 
-            [
-                {
-                    name: 'rock',
-                    image: document.getElementsByClassName('rock-gif'),
-                    beats: 'scissors'
-                },
-                {
-                    name: 'paper',
-                    image: document.getElementsByClassName('paper-gif'),
-                    beats: 'rock'
-                },
-                {
-                    name: 'scissors',
-                    image: document.getElementsByClassName('scissors-gif'),
-                    beats: 'paper'
-                }
-            ]
-
-
         });
     });
 
