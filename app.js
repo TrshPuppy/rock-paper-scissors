@@ -1,10 +1,12 @@
-// commit: Add player and compScoreboard to update scores r/t scores.
+// commit: Add computer and player-choice to stylesheet. Update COMPUTERCHOICES.
 
 // Global variables to update per round:
 let playerScore = 0;
 let computerScore = 0;
 let playerScoreboard = document.querySelector('.player-score p');
-let compScoreboard = document. querySelector('.computer-score p');
+let compScoreboard = document.querySelector('.computer-score p');
+let playerFaceoff = document.querySelector('.scoreboard .player-choice');
+let compFaceoff = document.querySelector('.scoreboard .computer-choice');
 
 // Fade in game from intro:
 const introScreen = document.querySelector('.intro');
@@ -49,13 +51,29 @@ playerOptions.forEach(option =>
             makeSelection(playerSelection);
 
             // Generate computer selection:
-            const COMPUTERCHOICES = ['rock', 'paper', 'scissors'];
+            const COMPUTERCHOICES = 
+            [
+                {
+                    name: 'rock',
+                    image: document.getElementsByClassName('rock-gif')
+                },
+                {
+                    name: 'paper',
+                    image: document.getElementsByClassName('paper-gif')
+                },
+                {
+                    name: 'scissors',
+                    image: document.getElementsByClassName('scissors-gif')
+                }
+            ];
             let randomNum = Math.floor(Math.random() *3);
             let computerSelection = COMPUTERCHOICES[randomNum];
+            compFaceoff.image = 
             console.log(computerSelection);
 
             // Convert playerSelection to selection (SELECTIONS array):
             const selection = SELECTIONS.find(selection => selection.name === playerSelection);
+
             console.log("playerSelection is", playerSelection)
             //console.log("selection is", selection);
 

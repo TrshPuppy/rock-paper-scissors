@@ -33,7 +33,7 @@ header
     align-items: center;
     justify-content: space-around;
     height: 50vh;
-    background-color: #B2FFFF50;
+    background-color: #B2FFFF80;
     border-radius: 8px;
     transition: opacity 0.5s ease;
 }
@@ -119,7 +119,7 @@ button
     align-items: center;
     justify-content: space-around;
     max-width: 1500px;
-    background-color: #B2FFFF50;
+    background-color: #B2FFFF80;
     border-radius: 8px;
     padding: 20px;
     font-family: 'Trispace', sans-serif;
@@ -138,6 +138,7 @@ button
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: #301E51;
 }
 
 .p-choice-gif
