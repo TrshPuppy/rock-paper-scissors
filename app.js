@@ -1,4 +1,4 @@
-// commit: Move SELECTIONS array out of forEach loop.
+// commit: Create selection variable using playerSelection and SELECTIONS.
 
 // Fade in game from intro:
 const introScreen = document.querySelector('.intro');
@@ -48,7 +48,10 @@ playerOptions.forEach(option =>
             let computerSelection = COMPUTERCHOICES[randomNum];
             console.log(computerSelection);
 
-            // Compare hands:
+            // Convert playerSelection to selection (SELECTIONS array):
+            const selection = SELECTIONS.find(selection => selection.name === playerSelection);
+            console.log("playerSelection is", playerSelection)
+            console.log("selection is", selection);
         });
     });
 
