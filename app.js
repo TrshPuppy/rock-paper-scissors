@@ -1,8 +1,10 @@
-// commit: Add score variables & add to compare hands. Check logic.
+// commit: Add player and compScoreboard to update scores r/t scores.
 
 // Global variables to update per round:
 let playerScore = 0;
 let computerScore = 0;
+let playerScoreboard = document.querySelector('.player-score p');
+let compScoreboard = document. querySelector('.computer-score p');
 
 // Fade in game from intro:
 const introScreen = document.querySelector('.intro');
@@ -58,10 +60,10 @@ playerOptions.forEach(option =>
             //console.log("selection is", selection);
 
             // Compare hands:
-            
             if(selection.beats === computerSelection)
             {
                 playerScore += 1;
+                playerScoreboard.textContent = playerScore;
             }
             else if(selection.name === computerSelection)
             {
@@ -70,6 +72,7 @@ playerOptions.forEach(option =>
             else
             {
                 computerScore += 1;
+                compScoreboard.textContent = computerScore;
             }
             console.log(playerScore);
             console.log(computerScore);
