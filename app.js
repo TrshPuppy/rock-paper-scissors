@@ -1,4 +1,4 @@
-// commit: Get playerOptions from document. Add event listener to selections.
+// commit: Add computerSelection using randomNum.
 
 // Fade in game from intro
 const introScreen = document.querySelector('.intro');
@@ -15,7 +15,7 @@ playButton.addEventListener('click', () =>
 const playerOptions = document.querySelectorAll('[data-selection]');
 console.log(playerOptions);
 
-// Add event listener to each option.
+// Add event listener to each player option.
 playerOptions.forEach(option => 
     {
         option.addEventListener('click', e =>
@@ -29,6 +29,12 @@ playerOptions.forEach(option =>
     {
         console.log(selection);
     }
+
+    // Computer selection
+    const computerChoices = ['rock', 'paper', 'scissors'];
+    let randomNum = Math.floor(Math.random() *3);
+    let computerSelection = computerChoices[randomNum];
+    console.log(computerSelection);
 
 
 
