@@ -34,6 +34,7 @@ header
     justify-content: space-around;
     height: 50vh;
     transition: opacity 0.5s ease;
+
 }
 
 .instructions
@@ -127,6 +128,7 @@ button
     transform: translate(-25%, -75%);
     height: 50vh;
     transition: opacity 0.5s ease 0.7s;
+
 }
 
 .player-choices
@@ -169,4 +171,24 @@ div.fadeIn
 .player-choice .scoreboard
 {
     max-width: 20%;
+}
+
+.winner-screen
+{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 1500px;
+    background-color: #B2FFFF80;
+    border-radius: 8px;
+    padding: 20px;
+    font-family: 'Trispace', sans-serif;
+    font-weight: bolder;
+    font-size: 20px;
+    position: center;
+   transform:  translateY(-75%);
+    height: 50vh;
+    transition: opacity 0.5s ease 0.7s;
+
 }

@@ -1,4 +1,4 @@
-// commit: Add checkForWinner func and youWin variable. Check logic.
+// commit: Add winnerScreen and style. Add fade in/out properties.
 
 // Global variables:
 let playerScore = 0;
@@ -7,6 +7,7 @@ let playerScoreboard = document.querySelector('.player-score p');
 let compScoreboard = document.querySelector('.computer-score p');
 let playerFaceoff = document.querySelector('.scoreboard .player-choice');
 let compFaceoff = document.querySelector('.scoreboard .computer-choice');
+let winnerScreen = document.querySelector('.winner-screen');
 const SELECTIONS = 
 [
     {
@@ -95,13 +96,20 @@ playerOptions.forEach(option =>
 
             // Call checkForWinner function:
             if(checkForWinner(playerScore, computerScore) === true)
-            {
+            {                
                 // Call chooseWinner function:
                 let youWin = chooseWinner(playerScore, computerScore);
-                
                 if(youWin === true)
                 {
                     faceOffScreen.classList.remove('fadeIn');
+                    winnerScreen.classList.add('fadeIn');
+                    winnerScreen.textContent = "You Win!"
+                }
+                else
+                {
+                    faceOffScreen.classList.remove('fadeIn');
+                    winnerScreen.classList.add('fadeIn');
+                    winnerScreen.textContent = "You Lose!";
                 }
 
             }
@@ -113,7 +121,6 @@ playerOptions.forEach(option =>
     {
         return;
     }
-
 
     // Check for score of 5:
     function checkForWinner(pScore, cScore)
