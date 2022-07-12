@@ -1,5 +1,4 @@
-// commit: Comment out old code. Start over. 
-
+// commit: Get playerOptions from document. Add event listener to selections.
 
 // Fade in game from intro
 const introScreen = document.querySelector('.intro');
@@ -12,10 +11,24 @@ playButton.addEventListener('click', () =>
     faceOffScreen.classList.add('fadeIn');
 });
 
+// Get player options from document:
+const playerOptions = document.querySelectorAll('[data-selection]');
+console.log(playerOptions);
 
-// Get player options from document
+// Add event listener to each option.
+playerOptions.forEach(option => 
+    {
+        option.addEventListener('click', e =>
+        {
+            const playerSelection = option.dataset.selection;
+            makeSelection(playerSelection);
+        });
+    });
 
-
+    function makeSelection(selection)
+    {
+        console.log(selection);
+    }
 
 
 
