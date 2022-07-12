@@ -1,4 +1,4 @@
-// commit: Edit stylesheet and COMPUTERCHOICES (rock) to display image on scoreboard.
+// commit: Edit stylesheet and COMPUTERCHOICES to display all choices.
 
 // Global variables to update per round:
 let playerScore = 0;
@@ -55,15 +55,15 @@ playerOptions.forEach(option =>
             [
                 {
                     name: 'rock',
-                    image: "<img class = 'scoreboard-rock' src = 'img/rock.gif'>"
+                    image: "<img class = 'scoreboard' src = 'img/rock.gif'>"
                 },
                 {
                     name: 'paper',
-                    image: "<img src = 'img/paper.gif'>"
+                    image: "<img class = 'scoreboard' src = 'img/paper.gif'>"
                 },
                 {
                     name: 'scissors',
-                    image: "<img src = 'img/scissors.gif'>"
+                    image: "<img class = 'scoreboard' src = 'img/scissors.gif'>"
                 }
             ];
             let randomNum = Math.floor(Math.random() *3);

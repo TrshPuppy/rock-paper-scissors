@@ -155,10 +155,11 @@ div.fadeIn
 
 .computer-choice
 {
-    min-width: 25%;
+    min-width: 10%;
 }
 
-.computer-choice .scoreboard-rock
+.computer-choice .scoreboard
 {
     max-width: 20%;
 }
+
