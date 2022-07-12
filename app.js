@@ -1,4 +1,4 @@
-// commit: Add image subcategory to COMPUTERCHOICES to update scoreboard.
+// commit: Edit stylesheet and COMPUTERCHOICES (rock) to display image on scoreboard.
 
 // Global variables to update per round:
 let playerScore = 0;
@@ -55,7 +55,7 @@ playerOptions.forEach(option =>
             [
                 {
                     name: 'rock',
-                    image: "<img src = 'img/rock.gif'>"
+                    image: "<img class = 'scoreboard-rock' src = 'img/rock.gif'>"
                 },
                 {
                     name: 'paper',

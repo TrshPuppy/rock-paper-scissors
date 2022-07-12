@@ -141,16 +141,6 @@ button
     background-color: #301E51;
 }
 
-.p-choice-gif
-{
-    max-width: 20%;
-}
-
-.c-choice-gif
-{
-    max-width: 20%;
-}
-
 div.fadeOut
 {
     opacity: 0;
@@ -165,5 +155,10 @@ div.fadeIn
 
 .computer-choice
 {
-    max-width: 5%;
+    min-width: 25%;
+}
+
+.computer-choice .scoreboard-rock
+{
+    max-width: 20%;
 }
