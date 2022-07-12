@@ -1,4 +1,4 @@
-// commit: Create chooseWinner function & check logic. More beautification.
+// commit: Add checkForWinner func and youWin variable. Check logic.
 
 // Global variables:
 let playerScore = 0;
@@ -93,8 +93,19 @@ playerOptions.forEach(option =>
                 compScoreboard.textContent = computerScore;
             }
 
-            // Call chooseWinner function:
-            chooseWinner(playerScore, computerScore);
+            // Call checkForWinner function:
+            if(checkForWinner(playerScore, computerScore) === true)
+            {
+                // Call chooseWinner function:
+                let youWin = chooseWinner(playerScore, computerScore);
+                
+                if(youWin === true)
+                {
+                    faceOffScreen.classList.remove('fadeIn');
+                }
+
+            }
+            
         });
     });
 
@@ -103,16 +114,30 @@ playerOptions.forEach(option =>
         return;
     }
 
+
+    // Check for score of 5:
+    function checkForWinner(pScore, cScore)
+    {
+        if(pScore === 5 || cScore === 5)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
    // Choose winner when xScore = 5:
    function chooseWinner(pScore, cScore)
    {
     if(pScore === 5)
     {
-        console.log("player wins");
+        return true;
     }
     else if(cScore === 5)
     {
-        console.log("computer wins!");
+        return false;
     }
     else
     {
