@@ -25,22 +25,42 @@ const game = () =>
         const playerOptions = document.querySelectorAll('.options button');
         const computerOptions = ['rock', 'paper', 'scissors'];
         let computerChoice;
-        let playerChoice;
+        
+        let rockButton = document.querySelector('button.rock');
+        let rockGif = document.querySelector('img.rock-gif');
+        let paperButton = document.querySelector('button.paper');
+        let paperGif = document.querySelector('img.paper-gif');
+        let scissorsButton = document.querySelector('button.scissors');
+        let scissorsGif = document.querySelector('img.scissors-gif');
 
-        playerOptions.forEach(x);
 
-        function x(option)
+        // Document player choice:
+        function getPlayerChoice(playerOptions)
         {
-            option.addEventListener('click', () =>
+            let playerChoice;
+            playerOptions.forEach((option) =>
             {
-                // Generate computer choice:
-                const randomNum = Math.floor(Math.random() * 3);
-                computerChoice = computerOptions[randomNum];
+                option.addEventListener('click', e =>
+                {
+                    if(e.target === rockButton || e.target === rockGif)
+                    {
+                        playerChoice = 'rock';
+                        console.log(playerChoice);
+                    }
+                    else if(e.target === paperButton || e.target === paperGif)
+                    {
+                        playerChoice = 'paper';
+                    }
+                    else if(e.target === scissorsButton || e.target === scissorsGif)
+                    {
+                        playerChoice = 'scissors';
+                    }
+                });
             });
-            return computerChoice;
+         return playerChoice;
         }
-       computerChoice = x(option);
-       console.log(computerChoice);
+        playerChoice = getPlayerChoice(playerOptions);
+        console.log(playerChoice);
     }
     playRound();
 
