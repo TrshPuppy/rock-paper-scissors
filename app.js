@@ -1,4 +1,4 @@
-// commit: Move computerSelection into forEach loop. Update comments
+// commit: Rename COMPUTERCHOICES. Create SELECTIONS array.
 
 // Fade in game from intro:
 const introScreen = document.querySelector('.intro');
@@ -25,10 +25,32 @@ playerOptions.forEach(option =>
             makeSelection(playerSelection);
 
             // Generate computer selection:
-            const computerChoices = ['rock', 'paper', 'scissors'];
+            const COMPUTERCHOICES = ['rock', 'paper', 'scissors'];
             let randomNum = Math.floor(Math.random() *3);
-            let computerSelection = computerChoices[randomNum];
+            let computerSelection = COMPUTERCHOICES[randomNum];
             console.log(computerSelection);
+
+            // Compare hands:
+            const SELECTIONS = 
+            [
+                {
+                    name: 'rock',
+                    image: document.getElementsByClassName('rock-gif'),
+                    beats: 'scissors'
+                },
+                {
+                    name: 'paper',
+                    image: document.getElementsByClassName('paper-gif'),
+                    beats: 'rock'
+                },
+                {
+                    name: 'scissors',
+                    image: document.getElementsByClassName('scissors-gif'),
+                    beats: 'paper'
+                }
+            ]
+
+
         });
     });
 
