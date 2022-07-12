@@ -1,4 +1,4 @@
-// commit: Create selection variable using playerSelection and SELECTIONS.
+// commit: Check logic in compare hands:
 
 // Fade in game from intro:
 const introScreen = document.querySelector('.intro');
@@ -52,6 +52,20 @@ playerOptions.forEach(option =>
             const selection = SELECTIONS.find(selection => selection.name === playerSelection);
             console.log("playerSelection is", playerSelection)
             console.log("selection is", selection);
+
+            // Compare hands:
+            if(selection.beats === computerSelection)
+            {
+                console.log("player wins!");
+            }
+            else if(selection.name === computerSelection)
+            {
+                console.log("tie!");
+            }
+            else
+            {
+                console.log("comp wins!");
+            }
         });
     });
 
