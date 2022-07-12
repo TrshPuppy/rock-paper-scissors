@@ -1,6 +1,6 @@
-// commit: Add computerSelection using randomNum.
+// commit: Move computerSelection into forEach loop. Update comments
 
-// Fade in game from intro
+// Fade in game from intro:
 const introScreen = document.querySelector('.intro');
 const faceOffScreen = document.querySelector('.faceoff');
 const playButton = document.querySelector('.intro button');
@@ -15,13 +15,20 @@ playButton.addEventListener('click', () =>
 const playerOptions = document.querySelectorAll('[data-selection]');
 console.log(playerOptions);
 
-// Add event listener to each player option.
+// Start new when player clicks options:
 playerOptions.forEach(option => 
     {
+        // Add event listener for player options:
         option.addEventListener('click', e =>
         {
             const playerSelection = option.dataset.selection;
             makeSelection(playerSelection);
+
+            // Generate computer selection:
+            const computerChoices = ['rock', 'paper', 'scissors'];
+            let randomNum = Math.floor(Math.random() *3);
+            let computerSelection = computerChoices[randomNum];
+            console.log(computerSelection);
         });
     });
 
@@ -29,12 +36,6 @@ playerOptions.forEach(option =>
     {
         console.log(selection);
     }
-
-    // Computer selection
-    const computerChoices = ['rock', 'paper', 'scissors'];
-    let randomNum = Math.floor(Math.random() *3);
-    let computerSelection = computerChoices[randomNum];
-    console.log(computerSelection);
 
 
 
