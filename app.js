@@ -1,4 +1,4 @@
-// commit: Add play-again button. Style. add winnerText.
+// commit: Add playGame function to enable game start/end.
 
 // Global variables:
 let playerScore = 0;
@@ -44,79 +44,83 @@ const COMPUTERCHOICES =
     }
 ];
 
-// Fade in game from intro:
-const introScreen = document.querySelector('.intro');
-const faceOffScreen = document.querySelector('.faceoff');
-const playButton = document.querySelector('.intro button');
-
-playButton.addEventListener('click', () =>
+function playGame()
 {
-    introScreen.classList.add('fadeOut');
-    faceOffScreen.classList.add('fadeIn');
-});
+    // Fade in game from intro:
+    const introScreen = document.querySelector('.intro');
+    const faceOffScreen = document.querySelector('.faceoff');
+    const playButton = document.querySelector('.intro button');
 
-// Get player options from document:
-const playerOptions = document.querySelectorAll('[data-selection]');
-
-// Start new when player clicks options:
-playerOptions.forEach(option => 
+    playButton.addEventListener('click', () =>
     {
-        // Add event listener for player options:
-        option.addEventListener('click', e =>
+        introScreen.classList.add('fadeOut');
+        faceOffScreen.classList.add('fadeIn');
+    });
+
+    // Get player options from document:
+    const playerOptions = document.querySelectorAll('[data-selection]');
+
+    // Start new when player clicks options:
+    playerOptions.forEach(option => 
         {
-            const playerSelection = option.dataset.selection;
-            makeSelection(playerSelection);
-
-            // Generate computer's selection:
-            let randomNum = Math.floor(Math.random() *3);
-            let computerSelection = COMPUTERCHOICES[randomNum].name;
-            compFaceoff.innerHTML = COMPUTERCHOICES[randomNum].image;
-
-            // Convert playerSelection to selection (SELECTIONS array):
-            const selection = SELECTIONS.find(selection => selection.name === playerSelection);
-
-            // Update player scoreboard w/ slection gif:
-            playerFaceoff.innerHTML = selection.image;
-
-            // Compare hands:
-            if(selection.beats === computerSelection)
+            // Add event listener for player options:
+            option.addEventListener('click', e =>
             {
-                playerScore += 1;
-                playerScoreboard.textContent = playerScore;
-            }
-            else if(selection.name === computerSelection)
-            {
-                playerScore += 0;
-                computerScore += 0;
-            }
-            else
-            {
-                computerScore += 1;
-                compScoreboard.textContent = computerScore;
-            }
+                const playerSelection = option.dataset.selection;
+                makeSelection(playerSelection);
 
-            // Call checkForWinner function:
-            if(checkForWinner(playerScore, computerScore) === true)
-            {                
-                // Call chooseWinner function:
-                let youWin = chooseWinner(playerScore, computerScore);
-                if(youWin === true)
+                // Generate computer's selection:
+                let randomNum = Math.floor(Math.random() *3);
+                let computerSelection = COMPUTERCHOICES[randomNum].name;
+                compFaceoff.innerHTML = COMPUTERCHOICES[randomNum].image;
+
+                // Convert playerSelection to selection (SELECTIONS array):
+                const selection = SELECTIONS.find(selection => selection.name === playerSelection);
+
+                // Update player scoreboard w/ slection gif:
+                playerFaceoff.innerHTML = selection.image;
+
+                // Compare hands:
+                if(selection.beats === computerSelection)
                 {
-                    faceOffScreen.classList.remove('fadeIn');
-                    winnerScreen.classList.add('fadeIn');
-                    winnerText.textContent = "You Win!"
+                    playerScore += 1;
+                    playerScoreboard.textContent = playerScore;
+                }
+                else if(selection.name === computerSelection)
+                {
+                    playerScore += 0;
+                    computerScore += 0;
                 }
                 else
                 {
-                    faceOffScreen.classList.remove('fadeIn');
-                    winnerScreen.classList.add('fadeIn');
-                    winnerText.textContent = "You Lose!";
+                    computerScore += 1;
+                    compScoreboard.textContent = computerScore;
                 }
 
-            }
-            
+                // Call checkForWinner function:
+                if(checkForWinner(playerScore, computerScore) === true)
+                {                
+                    // Call chooseWinner function:
+                    let youWin = chooseWinner(playerScore, computerScore);
+                    if(youWin === true)
+                    {
+                        faceOffScreen.classList.remove('fadeIn');
+                        winnerScreen.classList.add('fadeIn');
+                        winnerText.textContent = "You Win!"
+                    }
+                    else
+                    {
+                        faceOffScreen.classList.remove('fadeIn');
+                        winnerScreen.classList.add('fadeIn');
+                        winnerText.textContent = "You Lose!";
+                    }
+                }
+                
+            });
         });
-    });
+}
+
+playGame();
 
     function makeSelection(selection)
     {
