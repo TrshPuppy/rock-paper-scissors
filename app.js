@@ -1,4 +1,4 @@
-// commit: Add playGame function to enable game start/end.
+// commit: Add transition back to intro screen when playAgain button pressed.
 
 // Global variables:
 let playerScore = 0;
@@ -9,6 +9,10 @@ let playerFaceoff = document.querySelector('.scoreboard .player-choice');
 let compFaceoff = document.querySelector('.scoreboard .computer-choice');
 let winnerScreen = document.querySelector('.winner-screen');
 let winnerText = document.querySelector('.winner-screen .text');
+let playAgainBtn = document.querySelector('.winner-screen button');
+const introScreen = document.querySelector('.intro');
+const faceOffScreen = document.querySelector('.faceoff');
+const playButton = document.querySelector('.intro button');
 const SELECTIONS = 
 [
     {
@@ -27,7 +31,6 @@ const SELECTIONS =
         beats: 'paper'
     }
 ]
-
 const COMPUTERCHOICES = 
 [
     {
@@ -47,14 +50,11 @@ const COMPUTERCHOICES =
 function playGame()
 {
     // Fade in game from intro:
-    const introScreen = document.querySelector('.intro');
-    const faceOffScreen = document.querySelector('.faceoff');
-    const playButton = document.querySelector('.intro button');
-
     playButton.addEventListener('click', () =>
     {
         introScreen.classList.add('fadeOut');
         faceOffScreen.classList.add('fadeIn');
+        
     });
 
     // Get player options from document:
@@ -62,97 +62,103 @@ function playGame()
 
     // Start new when player clicks options:
     playerOptions.forEach(option => 
+    {
+        // Add event listener for player options:
+        option.addEventListener('click', e =>
         {
-            // Add event listener for player options:
-            option.addEventListener('click', e =>
+            const playerSelection = option.dataset.selection;
+            makeSelection(playerSelection);
+
+            // Generate computer's selection:
+            let randomNum = Math.floor(Math.random() *3);
+            let computerSelection = COMPUTERCHOICES[randomNum].name;
+            compFaceoff.innerHTML = COMPUTERCHOICES[randomNum].image;
+
+            // Convert playerSelection to selection (SELECTIONS array):
+            const selection = SELECTIONS.find(selection => selection.name === playerSelection);
+
+            // Update player scoreboard w/ slection gif:
+            playerFaceoff.innerHTML = selection.image;
+
+            // Compare hands:
+            if(selection.beats === computerSelection)
             {
-                const playerSelection = option.dataset.selection;
-                makeSelection(playerSelection);
+                playerScore += 1;
+                playerScoreboard.textContent = playerScore;
+            }
+            else if(selection.name === computerSelection)
+            {
+                playerScore += 0;
+                computerScore += 0;
+            }
+            else
+            {
+                computerScore += 1;
+                compScoreboard.textContent = computerScore;
+            }
 
-                // Generate computer's selection:
-                let randomNum = Math.floor(Math.random() *3);
-                let computerSelection = COMPUTERCHOICES[randomNum].name;
-                compFaceoff.innerHTML = COMPUTERCHOICES[randomNum].image;
-
-                // Convert playerSelection to selection (SELECTIONS array):
-                const selection = SELECTIONS.find(selection => selection.name === playerSelection);
-
-                // Update player scoreboard w/ slection gif:
-                playerFaceoff.innerHTML = selection.image;
-
-                // Compare hands:
-                if(selection.beats === computerSelection)
+            // Call checkForWinner function:
+            if(checkForWinner(playerScore, computerScore) === true)
+            {                
+                // Call chooseWinner function:
+                let youWin = chooseWinner(playerScore, computerScore);
+                if(youWin === true)
                 {
-                    playerScore += 1;
-                    playerScoreboard.textContent = playerScore;
-                }
-                else if(selection.name === computerSelection)
-                {
-                    playerScore += 0;
-                    computerScore += 0;
+                    faceOffScreen.classList.remove('fadeIn');
+                    winnerScreen.classList.add('fadeIn');
+                    winnerText.textContent = "You Win!";
                 }
                 else
                 {
-                    computerScore += 1;
-                    compScoreboard.textContent = computerScore;
+                    faceOffScreen.classList.remove('fadeIn');
+                    winnerScreen.classList.add('fadeIn');
+                    winnerText.textContent = "You Lose!";
                 }
-
-                // Call checkForWinner function:
-                if(checkForWinner(playerScore, computerScore) === true)
-                {                
-                    // Call chooseWinner function:
-                    let youWin = chooseWinner(playerScore, computerScore);
-                    if(youWin === true)
-                    {
-                        faceOffScreen.classList.remove('fadeIn');
-                        winnerScreen.classList.add('fadeIn');
-                        winnerText.textContent = "You Win!"
-                    }
-                    else
-                    {
-                        faceOffScreen.classList.remove('fadeIn');
-                        winnerScreen.classList.add('fadeIn');
-                        winnerText.textContent = "You Lose!";
-                    }
-                }
-                
-            });
+            }
         });
+    });
 }
-
 playGame();
 
-    function makeSelection(selection)
-    {
-        return;
-    }
+//Return to intro screen when Play Again button pressed:
+playAgainBtn.addEventListener('click', e =>
+{
+    introScreen.classList.remove('fadeOut');
+    faceOffScreen.classList.remove('fadeIn');
+    winnerScreen.classList.remove('fadeIn');
+});
 
-    // Check for score of 5:
-    function checkForWinner(pScore, cScore)
-    {
-        if(pScore === 5 || cScore === 5)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
+function makeSelection(selection)
+{
+    return;
+}
 
-   // Choose winner when xScore = 5:
-   function chooseWinner(pScore, cScore)
-   {
-    if(pScore === 5)
+// Check for score of 5:
+function checkForWinner(pScore, cScore)
+{
+    if(pScore === 5 || cScore === 5)
     {
         return true;
     }
-    else if(cScore === 5)
+    else
     {
         return false;
     }
-    else
-    {
-        return;
-    }
-   }
+}
+
+// Choose winner when xScore = 5:
+function chooseWinner(pScore, cScore)
+{
+if(pScore === 5)
+{
+    return true;
+}
+else if(cScore === 5)
+{
+    return false;
+}
+else
+{
+    return;
+}
+}
