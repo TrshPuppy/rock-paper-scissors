@@ -1,4 +1,4 @@
-// commit: Add transition back to intro screen when playAgain button pressed.
+// commit: Add resetScoreboard function.
 
 // Global variables:
 let playerScore = 0;
@@ -18,7 +18,7 @@ const SELECTIONS =
     {
         name: 'rock',
         image: "<img class = 'scoreboard' src = 'img/rock.gif'>",
-         beats: 'scissors'
+        beats: 'scissors'
     },
     {
         name: 'paper',
@@ -54,7 +54,6 @@ function playGame()
     {
         introScreen.classList.add('fadeOut');
         faceOffScreen.classList.add('fadeIn');
-        
     });
 
     // Get player options from document:
@@ -126,6 +125,7 @@ playAgainBtn.addEventListener('click', e =>
     introScreen.classList.remove('fadeOut');
     faceOffScreen.classList.remove('fadeIn');
     winnerScreen.classList.remove('fadeIn');
+    resetScoreboard();
 });
 
 function makeSelection(selection)
@@ -161,4 +161,13 @@ else
 {
     return;
 }
+}
+
+// Reset scoreboard for new game:
+function resetScoreboard(x)
+{
+    playerScore = 0;
+    computerScore = 0;
+    compScoreboard.textContent = computerScore;
+    playerScoreboard.textContent = playerScore;
 }
