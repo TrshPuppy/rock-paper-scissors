@@ -7,5 +7,8 @@ Per the Odin Project, the game will eventually also include a GUI to be designed
 
 ENJOY!
 
+Update: This game now has an UI made w/ HTML, CSS, and Javascript! The UI is based on requirements from the Odin Project which you can see here: https://www.theodinproject.com/lessons/foundations-revisiting-rock-paper-scissors. The UI also includes a pixelart background and pixelart button animations all of which I created myself.
 
-Total time spent: 7 hours.
+I plan to integrate this into my trshpuppy.github.io page for a live preview!
+
+Total time spent: 19 hours.
