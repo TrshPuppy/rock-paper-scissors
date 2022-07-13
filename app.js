@@ -1,4 +1,4 @@
-// commit: Add resetScoreboard function.
+// commit: Fix playAgainBtn listener to fade into faceOff screen instead of intro. Style.
 
 // Global variables:
 let playerScore = 0;
@@ -122,8 +122,7 @@ playGame();
 //Return to intro screen when Play Again button pressed:
 playAgainBtn.addEventListener('click', e =>
 {
-    introScreen.classList.remove('fadeOut');
-    faceOffScreen.classList.remove('fadeIn');
+    faceOffScreen.classList.add('fadeIn');
     winnerScreen.classList.remove('fadeIn');
     resetScoreboard();
 });

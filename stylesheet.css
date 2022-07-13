@@ -33,7 +33,7 @@ header
     align-items: center;
     justify-content: space-around;
     height: 50vh;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.6s ease;
 
 }
 
@@ -128,7 +128,7 @@ button
     position: absolute;
     transform: translate(-25%, -75%);
     height: 50vh;
-    transition: opacity 0.5s ease 0.7s;
+    transition: opacity 0.5s ease 0.6s;
 
 }
 
@@ -182,13 +182,12 @@ div.fadeIn
     justify-content: space-evenly;
     max-width: 1500px;
     min-width: fit-content;
-    background-color: #B2FFFF80;
-    border-radius: 8px;
+    color: #FF4E4E;
     font-family: 'Press Start 2P', sans-serif;
     font-weight: bolder;
     font-size: 50px;
     position: center;
     transform:  translateY(-75%);
     height: 50vh;
-    transition: opacity 0.5s ease 0.7s;
+    transition: opacity 0.7s ease;
 }
