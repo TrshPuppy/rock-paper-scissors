@@ -1,4 +1,5 @@
 # rock-paper-scissors
+## LIVE PREVIEW HERE: https://trshpuppy.github.io./rps/rps.html
 JavaScript rock paper scissors game
 
 This is a project for The Odin Project. See here: https://www.theodinproject.com/lessons/foundations-rock-paper-scissors.
